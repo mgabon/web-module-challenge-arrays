@@ -46,7 +46,7 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
- const cloned = [...originalFlavors]
+ const cloned = [...array]
  return cloned
 }   
 
@@ -87,10 +87,8 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(array, string){
-  const flavor = [];
-  for(let i = 0; i < array.length; i++){
-
-  }
+array.unshift(string)
+return array
 }
 
 
@@ -107,6 +105,7 @@ Use the removeLastFlavor function below to do the following:
 
 function removeLastFlavor(array){
  array.pop()
+ return array
 }
 
 
@@ -142,15 +141,15 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 // 2 params array and string we want to remove
-function removeFlavorByName(arr, index){
-  /*your code here*/
-  // loop throu array and check index for exact match of string, f it exists, remove it using splice
-
-  //splice(start, how many items to delete
-  
-// outside of loop, return array
+function removeFlavorByName(arr, string){
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === string){
+      arr.splice(i,1)
+    }
+  }
+  return arr
 }
-
+console.log("task 6", removeFlavorByName(originalFlavors,"Rocky Road"))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
